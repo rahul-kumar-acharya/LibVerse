@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Set fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Poppins', sans-serif;
+
+  /* Custom Color Palette */
+  --color-primary-brown: #3E2F26;
+  --color-primary-brown-hover: #1b1410;
+  --color-olive-green: #6B7A4E;
+  --color-olive-green-hover: #54603d;
+  --color-light-beige: #E9E2D8;
+  --color-light-beige-hover: #dbd2c3;
+  --color-warm-white: #FAF8F5;
+  --color-charcoal: #2D2D2D;
+
+  /* Overriding standard Slate/Gray colors to match natural warm stone and charcoal theme */
+  --color-slate-50: #FAF8F5;
+  --color-slate-100: #F4F1EA;
+  --color-slate-200: #E9E2D8;
+  --color-slate-300: #D8D2C4;
+  --color-slate-400: #AFA897;
+  --color-slate-500: #88806E;
+  --color-slate-600: #6B6252;
+  --color-slate-700: #50483C;
+  --color-slate-800: #3E2F26; /* Dark Brown */
+  --color-slate-900: #2D2D2D; /* Charcoal text */
+  --color-slate-950: #1C1917;
+
+  /* Overriding standard Indigo/Blue to map directly to Primary Brown and Olive Green */
+  --color-indigo-50: #E9E2D8;
+  --color-indigo-100: #F4F1EA;
+  --color-indigo-200: #E9E2D8;
+  --color-indigo-500: #6B7A4E;
+  --color-indigo-600: #3E2F26;
+  --color-indigo-700: #1b1410;
+  --color-indigo-800: #1b1410;
+  --color-indigo-900: #1b1410;
+}
+
+@layer base {
+  html, body {
+    font-family: var(--font-sans);
+    @apply bg-warm-white text-charcoal transition-colors duration-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply tracking-tight font-semibold text-charcoal;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}
+
+/* Glassmorphism/Card utility classes */
+.glass-panel {
+  @apply bg-white/95 border border-slate-200 shadow-sm rounded-2xl;
+}
+
+.glass-card {
+  @apply bg-white border border-slate-200 shadow-sm rounded-2xl;
+}
