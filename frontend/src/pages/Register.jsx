@@ -13,10 +13,6 @@ const Register = () => {
   const { showToast } = useToast();
   const navigate = useNavigate();
 
-  if (user) {
-    return <Navigate to="/dashboard" replace />;
-  }
-
   // Register Form State
   const [registerData, setRegisterData] = useState({
     username: '',
@@ -30,6 +26,10 @@ const Register = () => {
     phone: '',
   });
   const [registerErrors, setRegisterErrors] = useState({});
+
+  if (user) {
+    return <Navigate to="/dashboard" replace />;
+  }
 
   const handleRegisterChange = (e) => {
     const { name, value } = e.target;

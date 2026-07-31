@@ -14,12 +14,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const [loginData, setLoginData] = useState({ username: '', password: '' });
+  const [loginErrors, setLoginErrors] = useState({});
+
   if (user) {
     return <Navigate to="/dashboard" replace />;
   }
-
-  const [loginData, setLoginData] = useState({ username: '', password: '' });
-  const [loginErrors, setLoginErrors] = useState({});
 
   const from = location.state?.from?.pathname || '/dashboard';
 
